@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tel</title>
+</head>
+<body>
+    <label for="search">search by contact naem:</label>
+    <input type="text" id="search">
+    <button>search</button>
+    <p></p>
+    <script>
+        let contacts = ['邓有杰:13122383139','中国联通:10010','中国电信:10000','中国移动:10086']
+        let para = document.querySelector('p');
+        let input = document.querySelector('input')
+        let button = document.querySelector('button')
+        button.addEventListener('click',function(){
+            var Name = input.value
+            input.value = ''
+            input.focus();
+            for(let i = 0; i < contacts.length; i++){
+                let splitContacts = contacts[i].split(':')
+                if(Name ===splitContacts[0]){
+                    para.textContent = splitContacts[0] + '的号码是' + splitContacts[1]
+                    break
+                }else{
+                    para.textContent = '找不到该联系人，请重新输入'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

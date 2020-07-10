@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒计时10s</title>
+</head>
+<body>
+    <div class="output"></div>
+    <script>
+        var output = document.querySelector('.output');
+        output.innerHTML = '';
+        for(var i = 10; i >= 0; i--){
+            var para = document.createElement('p');  
+            var para = document.createElement('p');  
+            if(i ===10){            
+                para.textContent = 'Countdown 10';           
+            }else if(i ===0){
+                para.textContent = 'Blast off！'                
+            }else{
+                para.textContent = i;
+            }
+            output.appendChild(para);
+        }
+      
+    </script>
+</body>
+</html>
