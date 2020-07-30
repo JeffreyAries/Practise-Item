@@ -4,24 +4,38 @@ var myYear = myDate.getFullYear()
 var myMonth = myDate.getMonth()
 var myDay = myDate.getDate()
 var myWeek = myDate.getDay()
-//创建一个数组存放月份对应的英文以及每个月对应的天数
-var monthLeap = [31,29,31,30,31,30,31,31,30,31,30,31] //闰年
-var monthNormal = [31,28,31,30,31,30,31,31,30,31,30,31] //正常年
+
 var monthName = ["January","February","March","April","May","June","July","August","September","October","November","December"]
 var weekName = ['Sun','Tue','Wen','Thu','Fri','Sat','Mon',] 
-// if(myYear == new Date().getFullYear &&myMonth == new Date().getMonth &&myDay ==new Date().getDate){
-//     var dateTable = document.getElementById('days')
-//     var td = dateTable.childNodes 
-//     td.childNodes()
-// }
-// else{}
-// function backToday(){
-//     var myDate = new Date()
-//     var myYear = myDate.getFullYear()
-//     var myMonth = myDate.getMonth()
-//     var myDay = myDate.getDate()
-//     var myWeek = myDate.getDay()
-// }
+
+function thisDay() {
+    var today = new Date()
+    var td = document.getElementsByTagName('td')
+        if (myYear == today.getFullYear()&&myMonth ==today.getMonth()) {
+            for (var i = 0; i <td.length; i++) {
+               if(td[i].innerText == today.getDate()){
+                   td[i].style.backgroundColor ='white'
+                   break;
+               }
+            }
+        }
+        
+    
+}
+
+
+// //回到今天
+function backToday(){
+     myDate = new Date()
+     myYear = myDate.getFullYear()
+     myMonth = myDate.getMonth()
+     myDay = myDate.getDate()
+     myWeek = myDate.getDay()
+     getTitle()
+    refreshDate()
+    thisDay()
+}
+
 //修改标题
 function getTitle(){
     if(myMonth<0){
@@ -50,6 +64,11 @@ function daysTotal(year,month){
 //刷新日期
 function refreshDate() {
     var dateTable = document.getElementById('days')
+    var td = dateTable.childNodes 
+    for(var i = td.length-1 ; i >= 0; i--){
+        dateTable.removeChild(td[i])
+    } //删除之前页面的所
+
     var firstDay = dayStart(myYear, myMonth)
     var totalDays = daysTotal(myYear, myMonth)
     var first = 1
@@ -77,21 +96,11 @@ function refreshDate() {
     }
 }
 function prev(){
-    var dateTable = document.getElementById('days')
-    var td = dateTable.childNodes 
-    for(var i = td.length-1 ; i >= 0; i--){
-        dateTable.removeChild(td[i])
-    } //删除之前页面的所有td节点
     myMonth -= 1
     getTitle()
     refreshDate()
 }
 function next(){
-    var dateTable = document.getElementById('days')
-    var td = dateTable.childNodes 
-    for(var i = td.length-1 ; i >= 0; i--){
-        dateTable.removeChild(td[i])
-    }
     myMonth += 1
     getTitle()
     refreshDate()

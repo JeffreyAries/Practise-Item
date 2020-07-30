@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="index.css">
     <script src="index.js"></script>
 </head>
-<body onload="getTitle(),refreshDate()">
+<body onload="getTitle(),refreshDate(),thisDay()">
     <h2>简单小日历</h2>
+    <button onclick="backToday()">回到今天</button>
     <div class="year-month">
         <ul>
             <a class="prev cursor" onclick="prev()" id="prev"><</a>
