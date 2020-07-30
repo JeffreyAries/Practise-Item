@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微型计算器</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <h1>一个不太正经的计算器</h1>
+    <div class="model">
+        <form name="calculator">
+            <input type="button" id="clear" value="C" class="feature" onclick="push()">
+            <input type="text" id="screen">
+            <br>
+            <input type="button" value="7" class="number" onclick="get(this.value)">
+            <input type="button" value="8" class="number" onclick="get(this.value)">
+            <input type="button" value="9" class="number" onclick="get(this.value)">
+            <input type="button" value="+" class="cal" onclick="get(this.value)">
+            <br>
+            <input type="button" value="6" class="number" onclick="get(this.value)">
+            <input type="button" value="5" class="number" onclick="get(this.value)">
+            <input type="button" value="4" class="number" onclick="get(this.value)">
+            <input type="button" value="*" class="cal" onclick="get(this.value)">
+            <br>
+            <input type="button" value="3" class="number" onclick="get(this.value)">
+            <input type="button" value="2" class="number" onclick="get(this.value)">
+            <input type="button" value="1" class="number" onclick="get(this.value)">
+            <input type="button" value="-" class="cal" onclick="get(this.value)">
+            <br>
+            <input type="button" value="0" class="number" onclick="get(this.value)">
+            <input type="button" value="." class="cal" onclick="get(this.value)">
+            <input type="button" value="/" class="cal" onclick="get(this.value)">
+            <input type="button" value="=" class="feature" onclick="calculate()">
+            <br>
+        </form>
+    </div>
+</body>
+</html>

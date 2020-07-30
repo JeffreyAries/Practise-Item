@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单的日历</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+<body onload="getTitle(),refreshDate()">
+    <h2>简单小日历</h2>
+    <div class="year-month">
+        <ul>
+            <a class="prev cursor" onclick="prev()" id="prev"><</a>
+            <a class="next cursor" onclick="next()" id="next">></a>
+            <li style="text-align: center;font-size: 30px;">
+                <span id="calendar_month">month</span><br>
+                <span id="calendar_year">year</span>
+            </li>
+        </ul>
+    </div>
+    <table>
+        <thead id="week">
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wen</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>    
+        </thead>
+        <tbody id="days"></tbody>
+    </table>
+     
+</body>
+</html>
