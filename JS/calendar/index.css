@@ -1,7 +1,14 @@
 *{padding: 0;margin: 0;box-sizing: border-box;}
 ul{list-style-type: none;}
 .cursor{cursor: pointer;}
-body{max-width: 400px;margin: 0 auto;}
+body{max-width: 400px;margin: 0 auto;position: relative;}
+.header{
+    width: 100%;
+}
+#newYear,#newMonth,#newDay{
+    width: 114px;
+    outline: none;
+}
 .year-month{
     height: 200px;
     width: 400px;
@@ -71,23 +78,41 @@ th,td {
 #days{
     width: 100%;
     border: 1px green solid;
+    opacity: 0.7;
 }
-/* #days::after{
-    content: '';
-    display: table;
-    clear: both;
+#today{
+    background-color: #B0E0E6;
+    border: white;
+   font-size: large;
+   padding: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+    border-radius: 5px;
+    user-select: none;
+    outline: none;  /*解决边框问题*/
+    opacity: 0.8;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    font-weight: bold;
 }
-#days li{
-    
-    display: inline-block;
-    width: 100%;
-    border: 1px solid red;
-} */
-
-/* .li_2{
-    width: 14.28%;
-    float: right;
-    text-align: center;
-    background-color: black;
-    padding: 10px;
-} */
+#future{
+    background-color: #B0E0E6;
+    border: white;
+   font-size: large;
+   padding: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+    border-radius: 5px;
+    user-select: none;
+    outline: none;  /*解决边框问题*/
+    opacity: 0.8;
+    position: absolute;
+    left: 0;
+    top: 30px;
+    font-weight: bold;
+}
+button:hover,button:active{
+    opacity: 1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

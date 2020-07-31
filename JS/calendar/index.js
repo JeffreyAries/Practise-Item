@@ -1,3 +1,14 @@
+/**
+ * 需要添加的功能：
+ * 1.鼠标移到指定日期，该日期td背景变白，鼠标移到区域外，则变回原背景色
+ * 2.跳转到指定日期
+ * 待解决的bug：
+ * 1.鼠标聚焦在输入框时，系统判断：1.如果没有输入或者输入的不是数字，提示请输入数字，并且输入值无效
+ *                               2.提示输入月份的范围应该为1~12，否则输入值无效
+ *                               3.提示输入日期的范围应该为1~31，否则输入值无效
+ */
+
+
 //这个月多少天
 var myDate = new Date()
 var myYear = myDate.getFullYear()
@@ -8,6 +19,7 @@ var myWeek = myDate.getDay()
 var monthName = ["January","February","March","April","May","June","July","August","September","October","November","December"]
 var weekName = ['Sun','Tue','Wen','Thu','Fri','Sat','Mon',] 
 
+//今天的背景颜色为白色
 function thisDay() {
     var today = new Date()
     var td = document.getElementsByTagName('td')
@@ -23,6 +35,18 @@ function thisDay() {
     
 }
 
+//鼠标聚焦时一个颜色  离开时返回原色
+function changeColor(){
+    var mouse = document.querySelector('tbody');
+    mouse.addEventListener('mouseover', function (event) {
+        var bgColor = event.target.style.backgroundColor
+        event.target.style.backgroundColor = '#C63F1B';
+        
+        addEventListener('mouseout',function(event){ 
+            event.target.style.backgroundColor = bgColor;
+        })
+      });
+}
 
 // //回到今天
 function backToday(){
@@ -35,7 +59,27 @@ function backToday(){
     refreshDate()
     thisDay()
 }
+//判断输入框是否为空并且判断输入框是否为数字
+function judge(){
 
+}
+//跳转指定日期
+function toFuture(){
+    var newYear = document.getElementById('newYear').value
+    var newMonth = document.getElementById('newMonth').value
+    var newDay = document.getElementById('newDay').value
+    if(newYear!=''&&newMonth != '' && newDay != ''){
+        myYear = newYear
+        myMonth = newMonth-1
+        myDay = newDay
+        getTitle()
+        refreshDate()
+        thisDay()
+    }
+    else{
+        alert("请输入正确的数字💢")
+    }
+}
 //修改标题
 function getTitle(){
     if(myMonth<0){
@@ -68,7 +112,7 @@ function refreshDate() {
     for(var i = td.length-1 ; i >= 0; i--){
         dateTable.removeChild(td[i])
     } //删除之前页面的所
-
+    
     var firstDay = dayStart(myYear, myMonth)
     var totalDays = daysTotal(myYear, myMonth)
     var first = 1
@@ -99,11 +143,13 @@ function prev(){
     myMonth -= 1
     getTitle()
     refreshDate()
+    thisDay()
 }
 function next(){
     myMonth += 1
     getTitle()
     refreshDate()
+    thisDay()
 }
 //     var holder = document.getElementById('days')
 //     var li = document.createElement('li')

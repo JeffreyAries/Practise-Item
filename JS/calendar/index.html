@@ -7,9 +7,14 @@
     <link rel="stylesheet" href="index.css">
     <script src="index.js"></script>
 </head>
-<body onload="getTitle(),refreshDate(),thisDay()">
-    <h2>简单小日历</h2>
-    <button onclick="backToday()">回到今天</button>
+<body onload="getTitle(),refreshDate(),thisDay(),changeColor()">
+    <div class="header">
+        <input type="text" id="newYear" placeholder="year"><label>年</label>
+        <input type="text" id="newMonth" placeholder="Month"><label>月</label>
+        <input type="text" id="newDay" placeholder="date"><label>日</label>
+    </div>
+    <button onclick="toFuture()" id="future">跳转日期</button>
+    <button onclick="backToday()" id="today">回到今天</button>
     <div class="year-month">
         <ul>
             <a class="prev cursor" onclick="prev()" id="prev"><</a>
