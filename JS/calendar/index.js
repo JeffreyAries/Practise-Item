@@ -3,9 +3,8 @@
  * 1.鼠标移到指定日期，该日期td背景变白，鼠标移到区域外，则变回原背景色
  * 2.跳转到指定日期
  * 待解决的bug：
- * 1.鼠标聚焦在输入框时，系统判断：1.如果没有输入或者输入的不是数字，提示请输入数字，并且输入值无效
- *                               2.提示输入月份的范围应该为1~12，否则输入值无效
- *                               3.提示输入日期的范围应该为1~31，否则输入值无效
+ * 1,mouseover ,mouseout与 click共存问题
+
  */
 
 
@@ -24,9 +23,9 @@ function thisDay() {
     var today = new Date()
     var td = document.getElementsByTagName('td')
         if (myYear == today.getFullYear()&&myMonth ==today.getMonth()) {
-            for (var i = 0; i <td.length; i++) {
-               if(td[i].innerText == today.getDate()){
-                   td[i].style.backgroundColor ='white'
+            for (var j = 0; j <td.length; j++) {
+               if(td[j].innerText == today.getDate()){
+                   td[j].style.backgroundColor ='white'
                    break;
                }
             }
@@ -34,18 +33,32 @@ function thisDay() {
         
     
 }
-
+function onblur(event){
+    event.target.style.backgroundColor = 'rgb(198, 63, 27)';
+}
 //鼠标聚焦时一个颜色  离开时返回原色
 function changeColor(){
     var mouse = document.querySelector('tbody');
-    mouse.addEventListener('mouseover', function (event) {
-        var bgColor = event.target.style.backgroundColor
-        event.target.style.backgroundColor = '#C63F1B';
-        
-        addEventListener('mouseout',function(event){ 
-            event.target.style.backgroundColor = bgColor;
-        })
-      });
+    var td = document.getElementsByTagName('td')
+    // mouse.addEventListener('mouseover',function(event){ 
+    //     event.target.style.backgroundColor = 'rgb(198, 63, 27)';
+    //     addEventListener('mouseout',function(event){ 
+    //         event.target.style.backgroundColor = '';
+    //      })
+        mouse.addEventListener('click', function (event) {
+            thisDay()//确保今天的白色背景被点击以后不会
+            event.stopPropagation()
+            //每次点击前查看一遍，确保每次点击只会有一个颜色块，rgb是td[i].style.backgroundColor默认颜色，换成#则会报错
+            for(var i = 0;i<td.length;i++){
+                if(td[i].style.backgroundColor === 'rgb(198, 63, 27)'){
+                    td[i].style.backgroundColor = ''
+                }
+            }
+            event.target.style.backgroundColor = 'rgb(198, 63, 27)';
+          });
+   
+     
+      
 }
 
 // //回到今天
@@ -59,26 +72,61 @@ function backToday(){
     refreshDate()
     thisDay()
 }
-//判断输入框是否为空并且判断输入框是否为数字
-function judge(){
-
+//指定日期高亮
+function oneDay(){
+    var td = document.getElementsByTagName('td')
+    for (var i = 0; i < td.length; i++) {
+        if (td[i].innerText == myDay) {
+            td[i].style.backgroundColor = '#C63F1B'
+            break;
+        }
+    }
 }
 //跳转指定日期
-function toFuture(){
-    var newYear = document.getElementById('newYear').value
-    var newMonth = document.getElementById('newMonth').value
-    var newDay = document.getElementById('newDay').value
-    if(newYear!=''&&newMonth != '' && newDay != ''){
-        myYear = newYear
-        myMonth = newMonth-1
-        myDay = newDay
-        getTitle()
-        refreshDate()
-        thisDay()
+function toFuture() {
+    var newYear = document.getElementById('newYear')
+    var newMonth = document.getElementById('newMonth')
+    var newDay = document.getElementById('newDay')
+    //判断输入框是否为空并且判断输入框是否为数字
+    if(newYear.value != ''&&!isNaN(newYear.value)){
+        if(newYear.value>0){
+            myYear =newYear.value
+            
+        }
+        else{
+            alert('请输入正确的年份')
+            
+        }
+    }else{
+        alert('请输入年')
     }
-    else{
-        alert("请输入正确的数字💢")
+    if(newMonth.value != ''&&!isNaN(newMonth.value)){
+        if(newMonth.value >= 1 && newMonth.value <= 12){
+            myMonth =newMonth.value-1
+            
+        }
+        else{
+            alert('请输入正确的月份')
+        }
+    }else{
+        alert('请输入月')
     }
+    if(newDay.value != ''&&!isNaN(newDay.value)){
+        if(newDay.value >= 1 && newDay.value <= 31){
+            myDay =newDay.value
+            
+        }
+        else{
+            alert('请输入正确的日期')
+            
+        }
+    }else{
+        alert('请输入日期')
+    }
+    getTitle()
+    refreshDate()
+    oneDay()
+    thisDay()
 }
 //修改标题
 function getTitle(){

@@ -9,9 +9,9 @@
 </head>
 <body onload="getTitle(),refreshDate(),thisDay(),changeColor()">
     <div class="header">
-        <input type="text" id="newYear" placeholder="year"><label>年</label>
-        <input type="text" id="newMonth" placeholder="Month"><label>月</label>
-        <input type="text" id="newDay" placeholder="date"><label>日</label>
+        <input type="text" id="newYear" placeholder="year" required ><label>年</label>
+        <input type="text" id="newMonth" placeholder="Month" required><label>月</label>
+        <input type="text" id="newDay" placeholder="date" required><label>日</label>
     </div>
     <button onclick="toFuture()" id="future">跳转日期</button>
     <button onclick="backToday()" id="today">回到今天</button>
