@@ -34,7 +34,10 @@ function thisDay() {
     
 }
 function onblur(event){
-    event.target.style.backgroundColor = 'rgb(198, 63, 27)';
+    var color =  this.style.backgroundColor 
+    this.style.backgroundColor = 'green'
+    console.log(color )
+    console.log(color )
 }
 //鼠标聚焦时一个颜色  离开时返回原色
 function changeColor(){
