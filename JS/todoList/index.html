@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todoList</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+<body onload="closeAdd(),closeItem(),check(), enter()">
+    <div class="header">
+        <h2>My To Do List</h2>
+        <input type="text" placeholder="  Title..." id="myInput">
+        <input type="button" value="Add" id="myBtn" onclick="addItem()">
+    </div>
+    <ul id="myUl">
+        <li>Hit the gym</li>
+        <li>Pay bills</li>
+        <li>Meet George</li>
+        <li>Buy eggs</li>
+        <li>Read a book</li>
+        <li>Organize office</li>
+    </ul>
+    <div id="snackbar">fw给👴敲字进去</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+#progress{
+    border:1px solid rgb(76,175,80);
+    width: 100%;
+    
+    
+}
+#bar{
+    background-color: rgb(76,175,80);
+    width: 5%;
+    height: 50px;
+    color: white;
+    line-height: 50px;
+    text-align: center;
+}
