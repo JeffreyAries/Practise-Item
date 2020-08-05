@@ -13,3 +13,26 @@ function move(){
         }
     }
 }
+
+// $(document).ready(function () {
+//     $('#start').click(function () { 
+//        var a= Number($('#bar').text()[0])
+//        var progress = setInterval(start(),100)
+//        function start(){
+//            if(a>100){
+//                clearInterval(progress)
+//            }else{
+//                a++
+//                $('width').animate({
+//                    width: '20'+'%'
+//                })
+//            }
+//        }
+           
+      
+//     });
+//     $('#stop').click(function () { 
+//         $('#bar').stop(true)
+        
+//     });
+// });
