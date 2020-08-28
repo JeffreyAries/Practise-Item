@@ -6,7 +6,6 @@
 function createCode() {
     var checkCode = document.getElementById('code')
     var code = ''
-    var sum = 0
     var symbol = ['+', '-', '*']
     var index1 = Math.floor((Math.random()) * 10)
     var index2 = Math.floor((Math.random()) * 3)

@@ -1,39 +1,42 @@
 *{margin: 0; padding: 0;}
 
-.wrap{
-    width: 500px;
-    margin: 0 auto;
-}
 .content{
-    margin-top: 40px;
+    width: 800px;
+    margin: 40px auto;
 }
+
 #text{
     width: 200px;
-    height: 30px;
     outline: none;
+    vertical-align: middle;
+    box-sizing: border-box;
+    height: 30px;
 }
+
 #code{
     display: inline-block;
-    width: 100px;
+    width: 120px;
     height: 30px;
+    vertical-align: middle;
     line-height: 30px;
-    vertical-align: middle;
     text-align: center;
-    background-color: #aaa ;
+    background-color: #aaa;
     color: white;
-    padding-left: 10px;
-    font-weight: bold;
     letter-spacing: 10px;
-    text-decoration: none;
+    text-decoration:none;
+    margin-left: 10px;
+    padding-left: 10px;
 }
+
 #btn{
-    width: 60px;
-    height: 30px;
-    background-color:#499990 ;
-    border:#153021;
-    vertical-align: middle;
-    outline: none;
-    border-radius: 5px;
+    width: 80px;
+    margin-left: 10px;
+    background: #499990;
     color: white;
     cursor: pointer;
+    outline: none;
+    border: #aaa;
+    height: 30px;
+    vertical-align: middle;
+    border-radius: 5px;
 }
