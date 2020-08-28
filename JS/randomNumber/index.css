@@ -1,0 +1,39 @@
+*{margin: 0; padding: 0;}
+
+.wrap{
+    width: 500px;
+    margin: 0 auto;
+}
+.content{
+    margin-top: 40px;
+}
+#text{
+    width: 200px;
+    height: 30px;
+    outline: none;
+}
+#code{
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #aaa ;
+    color: white;
+    padding-left: 10px;
+    font-weight: bold;
+    letter-spacing: 10px;
+    text-decoration: none;
+}
+#btn{
+    width: 60px;
+    height: 30px;
+    background-color:#499990 ;
+    border:#153021;
+    vertical-align: middle;
+    outline: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}

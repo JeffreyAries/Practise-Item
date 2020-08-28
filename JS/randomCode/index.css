@@ -1,0 +1,36 @@
+*{margin: 0;padding: 0;}
+a{text-decoration: none;line-height: 30px;}
+.wrap{
+    width: 500px;
+    margin: 20px auto;
+}
+#text{
+    outline: none;
+    height: 30px;
+    box-sizing: border-box;
+    vertical-align: middle;
+    text-indent: 1em;
+}
+#code{
+    display: inline-block;
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    background: #aaa;
+    color: white;
+    letter-spacing: 10px;
+    padding-left: 10px;
+    vertical-align: middle;
+    font-weight: bold;
+}
+#btn{
+    width: 60px;
+    height: 30px;
+    outline: 0;
+    border: #153021;
+    border-radius: 5px;
+    height: 30px;
+    
+    background: #499990;
+    color: white;
+}

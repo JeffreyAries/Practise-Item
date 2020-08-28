@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS验证码</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+<body onload="createCode()">
+    <div class="wrap" onload="createCode()">
+        <input type="text" placeholder="请输入验证码" id="text">
+        <a href="#" id="code" onclick="createCode()"></a>
+        <input type="button" id="btn" value="验证" onclick="check()">
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机数字验证码</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+<body onload="createCode()">
+    <div class="wrap">
+        <div class="content">
+            <input id="text" type="text" placeholder="请输入验证码">
+            <a href="# " id="code" onclick="createCode()"></a>
+            <input type="button" onclick="check()" id="btn" value="验证">
+        </div>
+    </div>
+</body>
+</html>
