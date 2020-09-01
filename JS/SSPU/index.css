@@ -1,0 +1,151 @@
+*{margin: 0; padding: 0;}
+a{text-decoration: none; cursor: pointer;}
+/*顶部栏*/
+.topBar{
+    background-color: #797a79;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.topBar ul{width: 1000px; }
+.topBar ul::after{
+    clear: both;
+    content: "";
+    display: table;
+}
+.topBar li{
+    box-sizing: border-box;
+    float: right;
+    list-style-type: none;
+    margin: 3px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.topBar li a{
+    color: white;
+    font-size: 12px;
+}
+.topBar li a:hover{color:#e05109 ;}
+
+/*头部导航栏*/
+.topInfo{
+    background-color: #0a71ae;
+    height: 140px;display: flex;
+    width: 100%;justify-content: center;
+    align-items: center;
+}
+.topInfo_image{width: 1000px;}
+
+.topNav{
+    width: 100%;
+    background-color: #02598c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.topNav a{
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.topNav ul{width: 1000px;}
+.topNav ul>li{
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    width: 84px;
+    text-align: center;
+}
+.topNav ul>li:hover{background-color: white;}
+.topNav ul>li>a:hover{color: #02598c;}
+
+/*轮播图*/
+.swiper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ededed;
+}
+.slides{
+    width: 1000px;
+    position: relative;
+}
+.ani {
+    animation: ani_img .5s ease 1;  /*轮播图的动画效果*/
+}
+@keyframes ani_img{
+    0%{
+        opacity: 0;        
+    }
+    40%{
+        opacity: 0.4;        
+    }
+    80%{
+        opacity: 0.8;
+    }
+    100%{
+        opacity: 1;        
+    }
+}
+.prev,.next{
+    cursor: pointer;
+    position: absolute;
+    top:50%;
+    width: auto;
+    color: white;
+    font-size: 30px;
+    padding:16px;
+    margin-top: -50px;
+    font-weight: bold;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transition: 0.6s ease;
+}
+.prev{
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+.next{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover,.next:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.dot{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;  
+}
+.dot li{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 5px;
+   border-radius: 50%;
+   box-shadow: 0 0 4px black;
+   cursor: pointer;
+}
+.quiet{  background-color: #292e17;}
+.active{ background-color: white;}
+
+/* 网站主题内容 */
+.wrap{
+    width: 1000px;
+    margin: 0 auto;
+}
+.wrap::after{
+    display: table;
+    content: '';
+    clear: both;
+}
+.left,.center,.right{
+  float: left;
+  width: 33.33%;
+}
