@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="index.css">
     <script src="index.js"></script>
     <script src="slides.js"></script>
+    <script src="vedio_slides.js"></script>
 </head>
 <body >
     <header>
@@ -52,8 +53,8 @@
                 <div class="mySlides"><img src="./images/swiper5.png" alt=""></div>
                 <div class="mySlides"><img src="./images/swiper6.png" alt=""></div>
                 
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a> 
+                <a class="prev " onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next " onclick="plusSlides(1)">&#10095;</a> 
                 
                 <ul class="dot" id="dots" ></ul>
             </div>
@@ -65,7 +66,7 @@
         <div class="left" id="focus">
             <div class="left_top">
                 <img src="./images/focus.png" alt="">
-                <a href="#">更多>>></a>
+                <a href="#" class="more">更多>>></a>
             </div>
             <hr>
             <div class="left_content">
@@ -76,8 +77,8 @@
 
         <div class="center" id="news">
             <div class="center_top">
-                <img src="./images/news1.png" alt=""><span>学校新闻</span>
-                <a href="#">更多>>></a>
+                <img src="./images/news1.png" alt="" class="icon"><span class="title">学校新闻</span>
+                <a href="#" class="more">更多>>></a>
             </div>
             <hr>
             <div class="center_content">
@@ -93,8 +94,8 @@
 
         <div class="right" id="notice">
             <div class="right_top">
-                <img src="./images/notice.png" alt=""><span>通知公告</span>
-                <a href="#">更多>>></a>
+                <img src="./images/notice.png" alt="" class="icon"><span class="title">通知公告</span>
+                <a href="#" class="more">更多>>></a>
             </div>
             <hr>
             <div class="right_content">
@@ -110,8 +111,8 @@
 
         <div class="left" id="media">
             <div class="left_top">
-                <img src="./images/media.png" alt=""><span>媒体视角</span>
-                <a href="#">更多>>></a>
+                <img src="./images/media.png" alt="" class="icon"><span class="title">媒体视角</span>
+                <a href="#" class="more">更多>>></a>
             </div>
             <hr>
             <div class="left_content">
@@ -127,42 +128,42 @@
 
         <div class="center" id="activity">
             <div class="center_top">
-                <img src="./images/activity.png" alt=""><span>校内活动</span>
-                <a href="#">更多>>></a>
+                <img src="./images/activity.png" alt="" class="icon"><span class="title">校内活动</span>
+                <a href="#" class="more">更多>>></a>
             </div>
             <hr>
             <div class="center_content">
                 <div class="activity">
                     <div class="activity_date">
-                        <p>2020</p>
-                        <h6>09-01</h6>
+                        <p>&nbsp; &nbsp; 2020</p>
+                        <h6>&nbsp; 09-01</h6>
                     </div>
-                    <a href="#">
-                        <span>校庆学术活动：“华为杯”第十七届中国...</span>
-                        <span>地点：在线方式</span>
-                    </a>
+                    <div class="activity_content">
+                        <a href="#" class="article" >校庆学术活动：“华为杯”第十七届中...</a>
+                        <a href="#" class="position">地点：在线方式</a>
+                    </div>
                 </div>
 
                 <div class="activity">
                     <div class="activity_date">
-                        <p>2020</p>
-                        <h6>09-01</h6>
+                        <p> &nbsp; &nbsp; 2020</p>
+                        <h6>&nbsp;  09-01</h6>
                     </div>
-                    <a href="#">
-                        <span>校庆学术活动：“华为杯”第十七届中国...</span>
-                        <span>地点：在线方式</span>
-                    </a>
+                    <div class="activity_content">
+                        <a href="#" class="article" >校庆学术活动：“华为杯”第十七届中...</a>
+                        <a href="#" class="position">地点：在线方式</a>
+                    </div>
                 </div>
 
                 <div class="activity">
                     <div class="activity_date">
-                        <p>2020</p>
-                        <h6>09-01</h6>
+                        <p>&nbsp; &nbsp; 2020</p>
+                        <h6>&nbsp; 09-01</h6>
                     </div>
-                    <a href="#">
-                        <span>校庆学术活动：“华为杯”第十七届中国...</span>
-                        <span>地点：在线方式</span>
-                    </a>
+                    <div class="activity_content">
+                        <a href="#" class="article" >校庆学术活动：“华为杯”第十七届中...</a>
+                        <a href="#" class="position">地点：在线方式</a>
+                    </div>
                 </div>
 
             </div>
@@ -170,29 +171,28 @@
 
         <div class="right" id="vedio">
             <div class="right_top">
-                <img src="./images/vedio.png" alt=""><span>微视频</span>
-                <a href="#">更多>>></a>
+                <img src="./images/vedio.png" alt="" class="icon"><span class="title">微视频</span>
+                <a href="#" class="more">更多>>></a>
             </div>
             <hr>
             <div class="right_content">
                 <div class="swiper_box">
-                    <img src="./images/vedio_swiper1.png" alt="" title="">
-                    <img src="./images/vedio_swiper2.png" alt="" title="">
-                    <img src="./images/vedio_swiper3.png" alt="" title="">
-                    <img src="./images/vedio_swiper4.png" alt="" title="">
+                    <img src="./images/vedio_swiper1.png" alt="" title="" class="bigImg">
+                    <img src="./images/vedio_swiper2.png" alt="" title="" class="bigImg">
+                    <img src="./images/vedio_swiper3.png" alt="" title="" class="bigImg">
+                    <img src="./images/vedio_swiper4.png" alt="" title="" class="bigImg">
                 </div>
 
                 <div class="snap_box">
-                    <img src="./images/vedio_swiper1.png" alt="" title="">
-                    <img src="./images/vedio_swiper2.png" alt="" title="">
-                    <img src="./images/vedio_swiper3.png" alt="" title="">
-                    <img src="./images/vedio_swiper4.png" alt="" title="">
+                    <img src="./images/vedio_swiper1.png" alt="" title="" onmouseover="show(0)" onmouseout="" class="smallImg">
+                    <img src="./images/vedio_swiper2.png" alt="" title="" onmouseover="show(1)" class="smallImg">
+                    <img src="./images/vedio_swiper3.png" alt="" title="" onmouseover="show(2)" class="smallImg">
+                    <img src="./images/vedio_swiper4.png" alt="" title="" onmouseover="show(3)" class="smallImg">
                 </div>
             </div>
         </div>
     </div>
     </main>
-    <hr>
 
     <footer>
         <div class="footerNav">
@@ -213,7 +213,8 @@
             <img src="./images/footerInfo1.png" alt="">
             <img src="./images/footerInfo2.png" alt="">
             <img src="./images/footerInfo3.png" alt="">
-
+            <p>上海市浦东新区金海路2360号 邮编：201209 电话：021-50215021 <br> <br>Copyright©2019上海第二工业大学版权所有 意见反馈 投稿中心</p>
+            
         </div>
     </footer>
 </body>

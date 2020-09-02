@@ -1,6 +1,5 @@
 var showIndex = 1
 var slides = document.getElementsByClassName('mySlides')
-
 // 初始化函数
 window.onload = function(){
     createDot()
@@ -13,6 +12,18 @@ setInterval(function(){
     showIndex +=1
     showSlides(showIndex)
 },5000)
+
+
+// /点击小点点时会跳转到对应界面
+// function clickDots(){
+//     var dots = document.getElementById('dots').children
+//     for(let i = 0; i <dots.length;i++){
+//         dots[i].addEventListener("click",function(e){
+//            showSlides(e.target)
+//             console.log(e.currentTarget)
+//         })
+//     }
+// }
 
 //按键加减
 function plusSlides(n){
@@ -27,6 +38,7 @@ function showSlides(n){
     if(n < 1){showIndex = slides.length}
     for(var i = 0;i < slides.length;i++){
         slides[i].style.display='none'
+       
     }
    for(var i=0;i<slides.length;i++){
         dots[i].setAttribute("class","quiet")
@@ -34,7 +46,7 @@ function showSlides(n){
     slides[showIndex-1].style.display='block'
     slides[showIndex-1].classList.add("ani")
     dots[showIndex-1].setAttribute("class","active")
-    
+   
 }
 
 
