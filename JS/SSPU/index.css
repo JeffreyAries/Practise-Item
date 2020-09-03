@@ -34,11 +34,14 @@ a{text-decoration: none; cursor: pointer;}
 /*头部导航栏*/
 .topInfo{
     background-color: #0a71ae;
-    height: 140px;display: flex;
-    width: 100%;justify-content: center;
+    height: 140px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    
 }
-.topInfo_image{width: 1000px;}
+.topInfo_image{width: 1000px;position: relative;}
 
 .topNav{
     width: 100%;
@@ -65,7 +68,21 @@ a{text-decoration: none; cursor: pointer;}
 }
 .topNav ul>li:hover{background-color: white;}
 .topNav ul>li>a:hover{color: #02598c;}
+#search_input{
+    position: absolute;
+    right: 2%;
+    bottom: 1%;
+}
 
+#search_input>input{
+    height: 26px;
+    width: 192px;
+    box-sizing: border-box;
+    padding-left: 45px;
+    border: 0;
+    outline: none;
+    background: url(./images/top_info2.png) no-repeat;
+}
 /*轮播图*/
 .swiper{
     width: 100%;
