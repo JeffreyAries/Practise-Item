@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+    </div>
+    <div id="app2">
+        <span v-bind:title="message">鼠标悬停获得信息</span>
+    </div>
+    <div id="app3">
+        <p v-if="seen">look at me</p>
+    </div>
+    <div id="app4">
+        <ol>
+            <li v-for = "todo in todos">{{todo.text}}</li>
+        </ol>
+    </div>
+    <div id="app5">
+        <p>{{message}}</p>
+        <button v-on:click = "reverseMessage">反转消息</button>
+    </div>
+    <div id="app6">
+        <p  v-once>{{message}}</p>
+        <input v-model="message" type="text" />
+    </div>
+    <div id="app7">
+        <ol>
+            <todo-item 
+            v-for="items in groceryList"
+            v-bind:todo="items"
+            v-bind:key="items.id"
+            ></todo-item>
+        </ol>
+    </div>
+    <div id="demo">{{fullName}}</div>
+    <div id="watch-example">
+        <p>
+            ask a yes/no question:
+            <input v-model="question" type="text" />
+        </p>
+        <p>{{answer}}</p>
+    </div>
+    <div v-bind:class="{classObject}"></div>
+</body>
+    
+    <script src="index.js"></script>
+</html>
