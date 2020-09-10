@@ -171,3 +171,65 @@
     opacity: 1;
     transform: translate(0,0);
 }
+
+
+/*使用帧动画*/
+@-webkit-keyframes bounce{
+    0%,100%{
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(1);
+    }
+}
+.screen-2_point::before{
+    -webkit-animation: bounce 2s infinite 1s;
+}
+.screen-2_point::before,
+.screen-2_point::after{
+    content: ' ';
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    top: 1px;
+    left: 0px;
+    background-color: rgba(255, 0, 0, 0.4);
+    border-radius: 50%;
+    -webkit-animation: bounce 2s infinite;
+}
+
+.screen-2_point_1::after,
+.screen-2_point_1::before{
+    left: 200px;
+}
+
+
+/*导航条样式* _status_back*/
+.header{
+    transition: all 1s;
+}
+.header_status_back{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 3;
+}
+.header_status_back .header_nav-item{color: #ffffff;}
+.header_status_back .header_logo{color: #ffffff;}
+.header_nav-item_status_active,.outline_item_status_active{color: #f01414 !important;}
+
+/*大纲 _status_in*/
+.outline{
+    transition: all 1s;
+    transform: translate(60%,0);
+    opacity: 0;
+}
+.outline_status_in{
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+/*导航条和大纲双向定位*/
