@@ -67,6 +67,9 @@ var screenAnimateElements = {
         '.screen-5_subheading',
         '.screen-5_bg'
     ],
+    '.screen-6':[
+        '.screen-6_btn'
+    ]
 }
 //设置屏内元素为初始状态
 var setScreenAnimateInit = function(screenCls){
@@ -93,9 +96,26 @@ var playScreenAnimateDone = function(screenCls){
 //页面初始化
 window.onload = function () {
     for (k in screenAnimateElements) {
+        if(k === '.screen-1'){
+            getEle('.returnTop_btn').style.display = 'none'
+            continue
+        }
         setScreenAnimateInit(k)
+        
     }
-    playScreenAnimateDone('.screen-1')
+    setTimeout(() => {
+         playScreenAnimateDone('.screen-1')
+    }, 500);
+
+    //点击回到顶部
+    getEle('.returnTop_btn').onclick = function(){
+        document.documentElement.scrollTop = 0
+        switchNavItemsActive(0)
+        switchOutlineItemsActive(0)
+        navTip.style.left = 0
+        navTip.style.setProperty('width',navItems[0].offsetWidth-40+'px') 
+    }
+
     //鼠标悬浮大纲栏时显示
     // var header = getEle('.outline')
     // header.onmouseenter = function () {
@@ -135,27 +155,52 @@ window.onscroll = function(){
     
     if(top>1){
         playScreenAnimateDone('.screen-1')
+        navTip.style.left = 0
+        //添加滚动时下面的红条也会跟着滚动
+        navTip.style.setProperty('width',navItems[0].offsetWidth-40+'px')  
+    }else if(top<=700){
+        getEle('.returnTop_btn').style.display = 'none'
     }
     if(top>700){
         playScreenAnimateDone('.screen-2')
+        getEle('.returnTop_btn').style.display = 'block'
         switchNavItemsActive(1)
         switchOutlineItemsActive(1)
+        navTip.style.left = (1 * 70) + 'px'
+        navTip.style.setProperty('width',navItems[1].offsetWidth-40+'px')
+        
     }
     if(top>700*2){
         playScreenAnimateDone('.screen-3')
         switchNavItemsActive(2)
         switchOutlineItemsActive(2)
+        navTip.style.left = (2 * 70) + 'px'
+        navTip.style.setProperty('width',navItems[2].offsetWidth-40+'px')
     }
     if(top>700*3){
         playScreenAnimateDone('.screen-4')
         switchNavItemsActive(3)
         switchOutlineItemsActive(3)
+        navTip.style.left = (3 * 70) + 'px'
+        navTip.style.setProperty('width',navItems[3].offsetWidth-40+'px')
     }
     if(top>700*4){
         playScreenAnimateDone('.screen-5')
         switchNavItemsActive(4)
         switchOutlineItemsActive(4)
+        navTip.style.left = (4 * 70) + 'px'
+        navTip.style.setProperty('width',navItems[4].offsetWidth-40+'px')
     }
+    //window.innerHeight高度指浏览器可视高度（肉眼可见的高度）
+    //document.documentElement.scrollTop浏览器向上滚动的高度
+    //document.documentElement.scrollHeight 整个文档的真实高度
+    if(parseInt(Math.ceil((window.innerHeight + document.documentElement.scrollTop))) == parseInt(document.documentElement.scrollHeight)){
+        switchNavItemsActive(5)
+        switchOutlineItemsActive(4)
+        navTip.style.left = (5 * 70) + 'px'
+        navTip.style.setProperty('width',navItems[5].offsetWidth+'px')
+    }
+    
     
    
 //导航栏置顶
@@ -172,11 +217,21 @@ window.onscroll = function(){
 
 
 //导航栏和大纲双向定位
-var setItemsJump = function(i,lib){
+var setItemsJump = function (i, lib) {
     var items = lib[i]
-    items.onclick = function(){
-        document.documentElement.scrollTop = i * 800
+    if (i == 0) {
+        items.onclick = function () {
+            console.log('s')
+            document.documentElement.scrollTop = i * 800
+            navTip.style.left = 0
+            navTip.style.setProperty('width', navItems[0].offsetWidth - 40 + 'px')
+        }
+    } else {
+        items.onclick = function () {
+            document.documentElement.scrollTop = i * 800
+        }
     }
+
 }
 
 for(var i = 0;i < navItems.length;i++){
@@ -185,3 +240,41 @@ for(var i = 0;i < navItems.length;i++){
 for(var i = 0;i < outLineItems.length;i++){
     setItemsJump(i,outLineItems)
 }
+
+//滑动门特效
+var navTip = getEle('.header_nav_tip')
+var setTip = function (index, lib) {
+    lib[index].onmouseover = function () {
+        navTip.style.left = (index * 70) + 'px'
+        if(index == 5){
+            navTip.style.setProperty('width',lib[index].offsetWidth+'px')
+        }else{
+            navTip.style.setProperty('width',lib[index].offsetWidth-40+'px')
+        }
+        
+    }
+    var activeIndex = 0
+        lib[index].onmouseout = function () {
+            for (var i = 0; i < lib.length; i++) {
+                if(getCls(lib[i]).indexOf('header_nav-item_status_active')>0) {
+                    activeIndex = i
+                    break
+                }
+            }
+                navTip.style.left = (activeIndex * 70) + 'px'
+                if(activeIndex==5){
+                    navTip.style.setProperty('width',lib[activeIndex].offsetWidth+'px')
+                }else{
+                    navTip.style.setProperty('width',lib[activeIndex].offsetWidth-40+'px')
+                }
+                
+        }
+}
+
+
+for (var i = 0; i < navItems.length; i++) {
+    setTip(i, navItems)
+}
+
+
+

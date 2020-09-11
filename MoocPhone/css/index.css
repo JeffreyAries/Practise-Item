@@ -45,9 +45,24 @@ BEM设计模式
     color: #292f35;
     display: block;
     float: left;
-    margin-left: 40px;
+    padding-left: 40px;
     position: relative;
+    width: 30px;
+    text-align: center;
 }
+.header_nav_tip{
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #f01400;
+    transition: all .5s;
+    margin-left: 40px;
+}
+
 .header_nav-item:hover{
     color: #f01400;
 }
@@ -56,14 +71,14 @@ BEM设计模式
 
 }
 .header_nav-item_status_active::after{
-    content: '';
+    /* content: '';
     display: block;
     width: 100%;
     height: 2px;
     position: absolute;
     left: 0;
     bottom: 0;
-    background-color: #f01400;
+    background-color: #f01400; */
 }
 .header_nav-item_custom_button{
     background: #000;
@@ -72,6 +87,8 @@ BEM设计模式
     text-align: center;
     width: 90px;
     border-radius: 5px;
+    padding: 0px;
+    margin-left: 40px;
 }
 
 
@@ -422,4 +439,26 @@ BEM设计模式
 }
 .outline_item_status_active{
     color: #f01414;
+}
+
+/* 回到顶部按钮 */
+.returnTop{
+    position: fixed;
+    right: 10px;
+    bottom: 30px;
+    text-align: center;
+    border: 1px solid #e7e7e7;
+    z-index: 3;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .5);
+    background-color: #ffffff;
+    transition: all 1s;
+}
+.returnTop_btn{
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
 }
