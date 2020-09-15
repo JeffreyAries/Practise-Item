@@ -159,7 +159,7 @@ window.onscroll = function(){
         //添加滚动时下面的红条也会跟着滚动
         navTip.style.setProperty('width',navItems[0].offsetWidth-40+'px')  
     }else if(top<=700){
-        getEle('.returnTop_btn').style.display = 'none'
+        getEle('.returnTop_btn').style.display = 'none'  
     }
     if(top>700){
         playScreenAnimateDone('.screen-2')

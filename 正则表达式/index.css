@@ -1,0 +1,27 @@
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,table,td,img,div,dl,dt,dd,input{margin: 0;padding: 0;}
+#regexp{
+    width: 650px;
+    margin: 100px auto;
+    font-size: 14px;
+}
+#regexp .title{
+    color: #777;
+    font-size: 24px;
+    text-align: center;
+
+}
+#regexp .textBox{
+    width: 638px;
+    height: 150px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    resize: none;
+}
+#regexp .textfield{
+    width: 215px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    margin: 10px 0;
+}
