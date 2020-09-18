@@ -32,3 +32,20 @@ matchingBtn.onclick = function(){
     pattern = new RegExp(userRegExp.value)
     matchingResult.value = pattern.exec(userText.value) || '无'   //如果前面匹配到了就不执行后面的语句
 }
+
+
+var checkRegisterForm = function () {
+    var username = document.getElementById('username')
+    var password1 = document.getElementById('password')
+    var password2 = document.getElementById('password-2')
+    var test_username = /^[0-9a-zA-Z]{3,10}$/    //3-10位英文字母或数字
+    var test_password = /^\S{6,20}$/     //\S非空白符
+    if(test_username.test(username.value)&& test_password.test(password1.value) &&(password1.value===password2.value))
+    {
+        alert('success')
+        return true
+    }else{
+        alert('false')
+        return false
+    }
+}

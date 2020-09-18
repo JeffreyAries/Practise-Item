@@ -20,6 +20,29 @@
         匹配结果:<br>
         <textarea class="textBox" id="matchingResult" disabled ></textarea>
 
+        <ul id="test-list">
+            <li>JavaScript</li>
+            <li>Swift</li>
+            <li>HTML</li>
+            <li>ANSI C</li>
+            <li>CSS</li>
+            <li>DirectX</li>
+        </ul>
+        <form id="test-register" action="#" target="_blank" onsubmit="return checkRegisterForm()">
+            <p id="test-error" style="color:red"></p>
+            <p>
+                用户名: <input type="text" id="username" name="username">
+            </p>
+            <p>
+                口令: <input type="password" id="password" name="password">
+            </p>
+            <p>
+                重复口令: <input type="password" id="password-2">
+            </p>
+            <p>
+                <button type="submit">提交</button> <button type="reset">重置</button>
+            </p>
+        </form>
     </div>
     <script src="index.js"></script>
 </body>
